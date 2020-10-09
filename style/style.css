@@ -1,0 +1,350 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+*, *::after, *::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  color: floralwhite;
+}
+
+body {
+  background-color: #21212e;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section {
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.7fr 1.2fr;
+      grid-template-columns: 0.7fr 1.2fr;
+  -ms-grid-rows: auto 70vh;
+      grid-template-rows: auto 70vh;
+      grid-template-areas: "header nav" "main nav";
+}
+
+.header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 30vw;
+}
+
+.logo > img {
+  width: clamp(1rem, 7vw, 10vw);
+}
+
+.title {
+  cursor: pointer;
+  font-size: clamp(1rem, 2.5vw, 10rem);
+  font-weight: 700;
+  color: #46c2ff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.title span {
+  color: #bd11fa;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.title:hover {
+  color: #bd11fa;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.title:hover span {
+  color: #46c2ff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #21212e;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.nav-menu {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 5vw;
+}
+
+.nav-menu a {
+  color: #fff;
+  font-size: clamp(0.5rem, 0.8vw, 1rem);
+  font-weight: 200;
+}
+
+.nav-menu a:after {
+  display: block;
+  content: '';
+  border-bottom: solid 2px #46c2ff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.nav-menu a:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.btn--nav2 {
+  width: 9vw;
+  min-width: 5rem;
+  height: 6vh;
+  border: 1px solid #46c2ff;
+  border-radius: 3px;
+  color: #46c2ff;
+  background-color: #21212e;
+  font-weight: 200;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+.btn--nav2:hover {
+  cursor: pointer;
+  background: linear-gradient(-60deg, #bd11fa, #46c2ff);
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 10vw;
+}
+
+.btn--nav1 {
+  width: 9vw;
+  min-width: 5rem;
+  height: 6vh;
+  border: 1px solid #46c2ff;
+  border-radius: 3px;
+  color: #46c2ff;
+  background-color: #21212e;
+  font-weight: 200;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+.btn--nav1:hover {
+  cursor: pointer;
+  background: linear-gradient(-60deg, #bd11fa, #46c2ff);
+  color: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 10vw;
+}
+
+.main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main .main-text p {
+  font-size: 0.8vw;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.main .main-text h1 {
+  color: #46c2ff;
+  font-size: 3vw;
+  font-weight: 500;
+}
+
+.btn--main {
+  width: 12vw;
+  min-width: 8rem;
+  height: 6vh;
+  border: 1px solid #46c2ff;
+  border-radius: 3px;
+  color: #fff;
+  background: linear-gradient(-60deg, #bd11fa, #46c2ff);
+  font-weight: 200;
+}
+
+.btn--main:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 40px 0 #822eff;
+          box-shadow: 0 0 40px 0 #822eff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 5vw;
+}
+
+.main-image img {
+  width: clamp(20rem, 32vw, 30rem);
+  height: clamp(20rem, 70vh, 30rem);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 8rem 0.8rem rgba(130, 46, 255, 0.5);
+          box-shadow: 0 0 8rem 0.8rem rgba(130, 46, 255, 0.5);
+}
+
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  /* Stay in place */
+  z-index: 10;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: 0, 0, 0;
+  /* Black fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/opacity */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%;
+  /* 25% from the top */
+  width: 100%;
+  /* 100% width */
+  text-align: center;
+  /* Centered text/links */
+  margin-top: 30px;
+  /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  /* Display block instead of inline */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+  color: #46c2ff;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-width: 750px) {
+  .section {
+    -ms-grid-columns: 95vw;
+        grid-template-columns: 95vw;
+    -ms-grid-rows: auto 30vh 40vh;
+        grid-template-rows: auto 30vh 40vh;
+        grid-template-areas: "header" "main" "main";
+  }
+  .logo > img {
+    width: clamp(1.6rem, 18vw, 10vw);
+  }
+  .title {
+    cursor: pointer;
+    font-size: clamp(1rem, 4vw, 10rem);
+  }
+  .main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main .main-text p {
+    font-size: 2.2vw;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .main .main-text h1 {
+    color: #46c2ff;
+    font-size: 6vw;
+    font-weight: 500;
+  }
+  .main-image, .nav {
+    display: none;
+  }
+  .menu-res {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .menu-res .mn {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

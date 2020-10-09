@@ -1,0 +1,313 @@
+//imports 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+//variables
+$color--primary: #fff;
+$color--secondary: #46c2ff;
+$color--accent: #bd11fa;
+$color--background: #21212e;
+$color--shadow: #822eff;
+$color--gradient: linear-gradient(-60deg, $color--accent, $color--secondary);
+
+$font--asli: 'Poppins', sans-serif;
+
+
+
+//style
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family:$font--asli ;
+    color: floralwhite;
+}
+body{
+    background-color: $color--background;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+.section{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 0.7fr 1.2fr;
+    grid-template-rows: auto 70vh ;
+    grid-template-areas: "header nav" "main nav";
+
+}
+.header{
+    grid-area: header;
+    display: flex;
+    min-width: 5rem;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30vw;
+
+}
+
+
+.logo {
+    & > img{
+        width: clamp(1rem,7vw,10vw);
+    } 
+        
+    
+}
+.title{
+    cursor: pointer;
+    font-size: clamp(1rem,2.5vw,10rem);
+    font-weight: 700;
+    color: $color--secondary;
+    transition: 0.5s; 
+
+    
+    
+}
+.title span{
+    color:$color--accent;
+    transition: 0.5s; 
+
+}
+.title:hover {
+    color:$color--accent; 
+    transition: 0.5s; 
+}
+.title:hover span{
+    color:$color--secondary;
+    transition: 0.5s; 
+
+}
+.nav{
+    display: flex;
+    background-color:$color--background ;    
+    justify-content:space-evenly;
+    flex: 1;
+} 
+
+.nav-menu{
+    justify-content:space-evenly;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-left: 5vw;
+
+}
+.nav-menu a{
+    color: $color--primary;
+    font-size: clamp(0.5rem,0.8vw,1rem);
+    font-weight: 200;
+    &:after{
+        display:block;
+        content: '';
+        border-bottom: solid 2px $color--secondary ;  
+        transform: scaleX(0);  
+        transition: transform 0.3s ease-in-out;
+    }
+    &:hover:after{
+        transform: scaleX(1); 
+    }
+}
+.btn--nav2{
+    width:9vw;
+    min-width: 5rem;
+    height: 6vh;
+    border: 1px solid $color--secondary;
+    border-radius: 3px;
+    color: $color--secondary;
+    background-color:$color--background ;
+    font-weight: 200;
+    transition: 0.7s;
+    &:hover{
+        cursor: pointer;
+        background:$color--gradient ;
+        color: $color--primary;
+        transition: 0.3s;
+        width: 10vw;
+    }
+
+}
+.btn--nav1{
+    width:9vw;
+    min-width: 5rem;
+    height: 6vh;
+    border: 1px solid $color--secondary;
+    border-radius: 3px;
+    color: $color--secondary;
+    background-color:$color--background ;
+    font-weight: 200;
+    transition: 0.7s;
+    &:hover{
+        cursor: pointer;
+        background:$color--gradient ;
+        color: $color--primary;
+        transition: 0.3s;
+        width: 10vw;
+    }
+
+}
+
+.main{
+    
+    grid-area: main;
+    display: flex;
+    align-self: center;
+    justify-content: flex-end;
+    
+    
+}
+.main .main-text p{
+    font-size: 0.8vw;
+    
+    justify-content: start;
+}
+.main .main-text h1{
+    color:$color--secondary;
+    font-size: 3vw;
+    font-weight: 500;
+    
+}
+.btn--main{
+    width:12vw;
+    min-width: 8rem;
+    height: 6vh;
+    border: 1px solid $color--secondary;
+    border-radius: 3px;
+    color: $color--primary;
+    background:$color--gradient ;
+    font-weight: 200;
+    &:hover{    
+        cursor: pointer;
+        box-shadow: 0 0 40px 0 #822eff;
+        transition: 0.5s;
+
+
+    }
+}
+
+.main-image{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5vw;
+}
+.main-image img{
+    width:clamp(20rem,32vw,30rem);
+    height:clamp(20rem,70vh,30rem);
+    border-radius: 50%;
+    box-shadow: 0 0 8rem 0.8rem rgba(130, 46, 255, 0.5);
+    
+}
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+
+    height: 100%;
+    width: 0%;
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: (0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: $color--secondary;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+  
+
+
+
+@media screen and (max-width:750px){
+.section{
+    grid-template-columns: 95vw ;
+    grid-template-rows: auto 30vh 40vh ;
+    grid-template-areas: "header" "main" "main";
+
+}
+.logo {
+    & > img{
+        width: clamp(1.6rem,18vw,10vw);
+    } 
+        
+    
+}
+.title{
+    cursor: pointer;
+    font-size: clamp(1rem,4vw,10rem);
+
+    
+    
+}
+.main{
+    justify-content: center;
+    
+}
+.main .main-text p{
+    font-size: 2.2vw;
+    justify-content: start;
+}
+.main .main-text h1{
+    color:$color--secondary;
+    font-size:6vw;
+    font-weight: 500;
+    
+}
+.main-image, .nav {
+    display: none;
+
+}
+.menu-res{
+    display: flex;
+    justify-content: flex-end;
+}
+.menu-res .mn{
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+
+  
+
+
+}
+
+
