@@ -274,8 +274,8 @@ a {
 
 @media screen and (max-width: 750px) {
   .section {
-    -ms-grid-columns: 90vw;
-        grid-template-columns: 90vw;
+    -ms-grid-columns: 90vw 5vh;
+        grid-template-columns: 90vw 5vh;
     -ms-grid-rows: auto 70vh;
         grid-template-rows: auto 70vh;
         grid-template-areas: "header menubar" "main main";

@@ -80,9 +80,7 @@ a {
   background-color: $color--background;
   justify-content: space-evenly;
   flex: 1;
-}
-
-.nav-menu {
+& .nav-menu {
   justify-content: space-evenly;
   display: flex;
   flex: 1;
@@ -210,7 +208,7 @@ a {
 
 @media screen and (max-width: 750px) {
   .section {
-    grid-template-columns: 90vw;
+    grid-template-columns: 90vw 5vh;
     grid-template-rows: auto 70vh ;
     grid-template-areas: "header menubar" "main main" ;
   }
