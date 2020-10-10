@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
@@ -17,6 +19,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.menuBar {
+  display: none;
 }
 
 .section {
@@ -115,7 +121,7 @@ a {
 
 .nav-menu a:after {
   display: block;
-  content: '';
+  content: "";
   border-bottom: solid 2px #46c2ff;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
@@ -130,7 +136,7 @@ a {
           transform: scaleX(1);
 }
 
-.btn--nav2 {
+.nav-menu .btn--nav {
   width: 9vw;
   min-width: 5rem;
   height: 6vh;
@@ -143,29 +149,7 @@ a {
   transition: 0.7s;
 }
 
-.btn--nav2:hover {
-  cursor: pointer;
-  background: linear-gradient(-60deg, #bd11fa, #46c2ff);
-  color: #fff;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  width: 10vw;
-}
-
-.btn--nav1 {
-  width: 9vw;
-  min-width: 5rem;
-  height: 6vh;
-  border: 1px solid #46c2ff;
-  border-radius: 3px;
-  color: #46c2ff;
-  background-color: #21212e;
-  font-weight: 200;
-  -webkit-transition: 0.7s;
-  transition: 0.7s;
-}
-
-.btn--nav1:hover {
+.nav-menu .btn--nav:hover {
   cursor: pointer;
   background: linear-gradient(-60deg, #bd11fa, #46c2ff);
   color: #fff;
@@ -201,7 +185,7 @@ a {
   font-weight: 500;
 }
 
-.btn--main {
+.main .btn--main {
   width: 12vw;
   min-width: 8rem;
   height: 6vh;
@@ -212,7 +196,7 @@ a {
   font-weight: 200;
 }
 
-.btn--main:hover {
+.main .btn--main:hover {
   cursor: pointer;
   -webkit-box-shadow: 0 0 40px 0 #822eff;
           box-shadow: 0 0 40px 0 #822eff;
@@ -231,66 +215,36 @@ a {
 }
 
 .main-image img {
-  width: clamp(20rem, 32vw, 30rem);
-  height: clamp(20rem, 70vh, 30rem);
+  width: clamp(20rem, 32vw, 40rem);
+  height: clamp(20rem, 70vh, 40rem);
   border-radius: 50%;
   -webkit-box-shadow: 0 0 8rem 0.8rem rgba(130, 46, 255, 0.5);
           box-shadow: 0 0 8rem 0.8rem rgba(130, 46, 255, 0.5);
 }
 
 .overlay {
-  /* Height & width depends on how you want to reveal the overlay (see JS below) */
   height: 100%;
   width: 0%;
   position: fixed;
-  /* Stay in place */
   z-index: 10;
-  /* Sit on top */
   left: 0;
   top: 0;
   background-color: 0, 0, 0;
-  /* Black fallback color */
   background-color: rgba(0, 0, 0, 0.9);
-  /* Black w/opacity */
   overflow-x: hidden;
-  /* Disable horizontal scroll */
+  overflow-y: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
 }
 
-/* Position the content inside the overlay */
-.overlay-content {
+.overlay .overlay-content {
   position: relative;
   top: 25%;
-  /* 25% from the top */
   width: 100%;
-  /* 100% width */
   text-align: center;
-  /* Centered text/links */
   margin-top: 30px;
-  /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
 
-/* The navigation links inside the overlay */
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  /* Display block instead of inline */
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  /* Transition effects on hover (color) */
-}
-
-/* When you mouse over the navigation links, change their color */
-.overlay a:hover, .overlay a:focus {
-  color: #46c2ff;
-}
-
-/* Position the close button (top right corner) */
 .overlay .closebtn {
   position: absolute;
   top: 20px;
@@ -298,13 +252,33 @@ a {
   font-size: 60px;
 }
 
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #46c2ff;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #46c2ff;
+}
+
 @media screen and (max-width: 750px) {
   .section {
-    -ms-grid-columns: 95vw;
-        grid-template-columns: 95vw;
-    -ms-grid-rows: auto 30vh 40vh;
-        grid-template-rows: auto 30vh 40vh;
-        grid-template-areas: "header" "main" "main";
+    -ms-grid-columns: 90vw;
+        grid-template-columns: 90vw;
+    -ms-grid-rows: auto 70vh;
+        grid-template-rows: auto 70vh;
+        grid-template-areas: "header menubar" "main main";
   }
   .logo > img {
     width: clamp(1.6rem, 18vw, 10vw);
@@ -329,22 +303,27 @@ a {
     font-size: 6vw;
     font-weight: 500;
   }
-  .main-image, .nav {
+  .main-image,
+  .nav {
     display: none;
   }
-  .menu-res {
+  .overlay {
+    overflow-y: scroll;
+  }
+  .menuBar {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
   }
-  .menu-res .mn {
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
+  .menuBar:hover {
+    color: #46c2ff;
   }
 }
 /*# sourceMappingURL=style.css.map */
