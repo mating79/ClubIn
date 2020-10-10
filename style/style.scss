@@ -30,8 +30,8 @@ a {
   text-decoration: none;
 }
 .menuBar {
-    // grid-area: menubar;
-    display: none;
+  // grid-area: menubar;
+  display: none;
 }
 
 .section {
@@ -80,43 +80,44 @@ a {
   background-color: $color--background;
   justify-content: space-evenly;
   flex: 1;
-& .nav-menu {
-  justify-content: space-evenly;
-  display: flex;
-  flex: 1;
-  align-items: center;
-  margin-left: 5vw;
-  a {
-    color: $color--primary;
-    font-size: clamp(0.5rem, 0.8vw, 1rem);
-    font-weight: 200;
-    &:after {
-      display: block;
-      content: "";
-      border-bottom: solid 2px $color--secondary;
-      transform: scaleX(0);
-      transition: transform 0.3s ease-in-out;
-    }
-    &:hover:after {
-      transform: scaleX(1);
-    }
-  }
-  & .btn--nav {
-    width: 9vw;
-    min-width: 5rem;
-    height: 6vh;
-    border: 1px solid $color--secondary;
-    border-radius: 3px;
-    color: $color--secondary;
-    background-color: $color--background;
-    font-weight: 200;
-    transition: 0.7s;
-    &:hover {
-      cursor: pointer;
-      background: $color--gradient;
+  & .nav-menu {
+    justify-content: space-evenly;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-left: 5vw;
+    a {
       color: $color--primary;
-      transition: 0.3s;
-      width: 10vw;
+      font-size: clamp(0.5rem, 0.8vw, 1rem);
+      font-weight: 200;
+      &:after {
+        display: block;
+        content: "";
+        border-bottom: solid 2px $color--secondary;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+      }
+      &:hover:after {
+        transform: scaleX(1);
+      }
+    }
+    & .btn--nav {
+      width: 9vw;
+      min-width: 5rem;
+      height: 6vh;
+      border: 1px solid $color--secondary;
+      border-radius: 3px;
+      color: $color--secondary;
+      background-color: $color--background;
+      font-weight: 200;
+      transition: 0.7s;
+      &:hover {
+        cursor: pointer;
+        background: $color--gradient;
+        color: $color--primary;
+        transition: 0.3s;
+        width: 10vw;
+      }
     }
   }
 }
@@ -208,9 +209,9 @@ a {
 
 @media screen and (max-width: 750px) {
   .section {
-    grid-template-columns: 90vw 5vh;
-    grid-template-rows: auto 70vh ;
-    grid-template-areas: "header menubar" "main main" ;
+    grid-template-columns: 90vw 10vw;
+    grid-template-rows: auto 70vh;
+    grid-template-areas: "header menubar" "main main";
   }
   .logo {
     & > img {
@@ -239,17 +240,14 @@ a {
   }
   .overlay {
     overflow-y: scroll;
-
-}
+  }
   .menuBar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
-    &:hover{
-        color: $color--secondary;
+    &:hover {
+      color: $color--secondary;
     }
-
   }
-
 }

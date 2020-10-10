@@ -97,7 +97,7 @@ a {
           flex: 1;
 }
 
-.nav-menu {
+.nav .nav-menu {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -113,13 +113,13 @@ a {
   margin-left: 5vw;
 }
 
-.nav-menu a {
+.nav .nav-menu a {
   color: #fff;
   font-size: clamp(0.5rem, 0.8vw, 1rem);
   font-weight: 200;
 }
 
-.nav-menu a:after {
+.nav .nav-menu a:after {
   display: block;
   content: "";
   border-bottom: solid 2px #46c2ff;
@@ -131,12 +131,12 @@ a {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
-.nav-menu a:hover:after {
+.nav .nav-menu a:hover:after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
 
-.nav-menu .btn--nav {
+.nav .nav-menu .btn--nav {
   width: 9vw;
   min-width: 5rem;
   height: 6vh;
@@ -149,7 +149,7 @@ a {
   transition: 0.7s;
 }
 
-.nav-menu .btn--nav:hover {
+.nav .nav-menu .btn--nav:hover {
   cursor: pointer;
   background: linear-gradient(-60deg, #bd11fa, #46c2ff);
   color: #fff;
@@ -274,8 +274,8 @@ a {
 
 @media screen and (max-width: 750px) {
   .section {
-    -ms-grid-columns: 90vw 5vh;
-        grid-template-columns: 90vw 5vh;
+    -ms-grid-columns: 90vw 10vw;
+        grid-template-columns: 90vw 10vw;
     -ms-grid-rows: auto 70vh;
         grid-template-rows: auto 70vh;
         grid-template-areas: "header menubar" "main main";
